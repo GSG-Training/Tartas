@@ -55,7 +55,7 @@ public class MyPager2Adapter extends RecyclerView.Adapter<MyPager2Adapter.Images
             imageView.setImageResource(item.getImageView());
             textView1.setText(item.getTextView1());
             textView2.setText(item.getTextView2());
-           
+
         }
     }
 }
