@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Tartas</string>
+    <string name="text_splash1">Choose your favourite cake!</string>
+    <string name="text_splash11">Browse between thousands of Cake types with all your favours</string>
+    <string name="text_splash2">Order directly your Cake!</string>
+    <string name="text_splash22">Tap to order your favourite cake and choose your ingredients</string>
+    <string name="text_splash3">Get your cake delivered to you!</string>
+    <string name="text_splash33">Choose the direction of develivery and get your cake delivered to your direction by our delivery services.</string>
+    <string name="skip">Skip</string>
+    <string name="username">Full name</string>
+    <string name="emailaddress">Email address</string>
+    <string name="password">Password</string>
+    <string name="haveaccount">Already have an account? Sign in</string>
+    <string name="signup">Sign up</string>
+    <string name="signin">Sign in</string>
+    <string name="login">Log in</string>
+    <string name="donthaveaccount">Don\'t have an account? Sign up</string>
+    <string name="forgotpassword">Forgot Password?</string>
 </resources>
