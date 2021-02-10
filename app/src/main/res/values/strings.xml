@@ -16,4 +16,16 @@
     <string name="login">Log in</string>
     <string name="donthaveaccount">Don\'t have an account? Sign up</string>
     <string name="forgotpassword">Forgot Password?</string>
+    <string name="action_search">Search</string>
+    <string name="home">Home</string>
+    <string name="cakes">Cakes</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
+    <string name="myOrders">My Orders</string>
+    <string name="myAddress">My Address</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="contactus">Contact Us</string>
+    <string name="logout">Logout</string>
+    <string name="open">Drawer Open</string>
+    <string name="close">Drawer Close</string>
 </resources>

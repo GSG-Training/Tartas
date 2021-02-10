@@ -17,6 +17,7 @@
     </androidx.viewpager2.widget.ViewPager2>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        style="@style/customfontstyle"
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +28,6 @@
         android:textColor="@color/white"
         app:icon="@drawable/ic_next"
         app:iconGravity="textEnd"
-        style="@style/TextAppearance.AppCompat.Medium"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -8,5 +8,6 @@
     <color name="black">#000</color>
     <color name="red">#F4323F</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_tabs">#F0FDFD</color>
     <color name="Residential">#94000000</color>
 </resources>
