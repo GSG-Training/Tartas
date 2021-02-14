@@ -28,4 +28,6 @@
     <string name="logout">Logout</string>
     <string name="open">Drawer Open</string>
     <string name="close">Drawer Close</string>
+    <string name="View_More">View More</string>
+    <string name="todaysspecial">Today\'s Special</string>
 </resources>

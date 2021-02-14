@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "620190625913",
+    "project_id": "tartas-fc1ea",
+    "storage_bucket": "tartas-fc1ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620190625913:android:e7ad045c4b98436486a4a8",
+        "android_client_info": {
+          "package_name": "com.example.tartas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620190625913-60c6psfdjttlrdn4ah4m6um0mhs2brdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC50kB-f7sFwzKf-e1uW2VlrEgEeQtZKvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620190625913-60c6psfdjttlrdn4ah4m6um0mhs2brdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.tartas.view.welcome;
+package com.example.tartas.view.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,22 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tartas.R;
+import com.example.tartas.model.ItemWelcome;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyPager2Adapter extends RecyclerView.Adapter<MyPager2Adapter.ImagesHolder> {
+public class WelcomeAdapter extends RecyclerView.Adapter<WelcomeAdapter.ImagesHolder> {
 
-    private List<ItemPager> mItems;
+    private List<ItemWelcome> mItems;
 
-    public MyPager2Adapter(ArrayList<ItemPager> items) {
+    public WelcomeAdapter(ArrayList<ItemWelcome> items) {
         mItems = items;
     }
 
     @NonNull
     @Override
     public ImagesHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_welcome, parent, false);
         return new ImagesHolder(view);
     }
 
@@ -51,7 +52,7 @@ public class MyPager2Adapter extends RecyclerView.Adapter<MyPager2Adapter.Images
 
         }
 
-        public void bind(ItemPager item) {
+        public void bind(ItemWelcome item) {
             imageView.setImageResource(item.getImageView());
             textView1.setText(item.getTextView1());
             textView2.setText(item.getTextView2());

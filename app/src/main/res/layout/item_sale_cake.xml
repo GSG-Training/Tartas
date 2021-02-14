@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    android:background="@drawable/backgroundhome">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center|top"
+        android:background="@drawable/readus"
+        android:id="@+id/relative_layout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name_cake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="8dp"
+            tools:text="Moulin Rouge"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_below="@id/name_cake"
+            android:id="@+id/price_cake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="$49.99"
+            />
+
+        <RatingBar
+            android:padding="8dp"
+            android:id="@+id/simpleRatingBar_home"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_cake"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/price_cake"
+            android:layout_toRightOf="@+id/price_cake"
+            android:isIndicator="true"
+            android:numStars="6"
+            android:rating="2.5"
+            android:stepSize="0.1"
+            android:clickable="true" />
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:layout_below="@id/price_cake"
+            android:id="@+id/description_cake"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            tools:text="Our classic red velvet sponge"
+            android:minLines="1"
+            android:maxLines="2"
+            android:paddingLeft="8dp" />
+
+        <TextView
+            android:layout_below="@id/description_cake"
+            android:id="@+id/text_view_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/View_More"
+            android:textColor="@color/red"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_gravity="center|top"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/image_sale_cake"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_vertical|center"
+            android:src="@drawable/loadgif"
+            android:layout_alignParentRight="true" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

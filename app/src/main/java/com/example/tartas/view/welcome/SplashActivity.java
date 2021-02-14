@@ -9,6 +9,9 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.example.tartas.R;
+import com.example.tartas.view.MainActivity.MainActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.lang.ref.WeakReference;
 
@@ -18,19 +21,23 @@ public class SplashActivity extends AppCompatActivity {
     private boolean isRunning = true;
     private long currentTimeInMillis;
     private long remaining = 3000;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        mAuth = FirebaseAuth.getInstance();
         if (savedInstanceState != null){
-            remaining = savedInstanceState.getLong("remaining_delay",5000);
+            remaining = savedInstanceState.getLong("remaining_delay",3000);
         }
         currentTimeInMillis = System.currentTimeMillis();
         myHandler = new MyHandler(new WeakReference<>(this));
         Message message = myHandler.obtainMessage();
         myHandler.sendMessageDelayed(message , remaining);
+
+
     }
 
     @Override
@@ -46,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
         outState.putLong("remaining_delay", remaining);
     }
 
-    static class MyHandler extends Handler {
+    class MyHandler extends Handler {
         private final WeakReference<SplashActivity> splashActivityWeakReference;
 
         MyHandler(WeakReference<SplashActivity> splashActivityWeakReference) {
@@ -58,9 +65,20 @@ public class SplashActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             SplashActivity splashActivity = splashActivityWeakReference.get();
             if (splashActivity != null){
-                splashActivity.startActivity(new Intent(splashActivity , WelcomeActivity.class));
+                isLogin();
                 splashActivity.finish();
             }
+        }
+    }
+
+    public void isLogin(){
+        FirebaseUser user = mAuth.getCurrentUser();
+        if ( user != null){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }else {
+            startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
+            finish();
         }
     }
 }

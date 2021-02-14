@@ -1,17 +1,17 @@
-package com.example.tartas.view.welcome;
+package com.example.tartas.model;
 
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ItemPager {
+public class ItemWelcome {
     private int imageView;
     private String textView1;
     private String textView2;
 
-    public ItemPager() {
+    public ItemWelcome() {
     }
 
-    public ItemPager(int imageView, String textView1, String textView2) {
+    public ItemWelcome(int imageView, String textView1, String textView2) {
         this.imageView = imageView;
         this.textView1 = textView1;
         this.textView2 = textView2;

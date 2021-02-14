@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,35 +18,44 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tartas.R;
 import com.example.tartas.view.sign.SigninActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView nav_menu;
-
+    FirebaseAuth mAuth;
+    TextView toolbarTitle = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_search:
-                        Toast.makeText(MainActivity.this, "Search Clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return false;
-            }
-        });
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        setSupportActionBar(toolbar);
+        mTitle.setText(toolbar.getTitle());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.action_search:
+//                        Toast.makeText(MainActivity.this, "Search Clicked", Toast.LENGTH_SHORT).show();
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
 
         FrameLayout frameLayout = findViewById(R.id.container);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
@@ -67,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+      //  getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
         nav_menu.getMenu().getItem(0).setChecked(true);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
@@ -81,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setText(R.string.account).setIcon(R.drawable.ic_baseline_account_24);
 
     }
+
 
     static class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -112,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void navListeners(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+            case R.id.myhome:
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
                 break;
             case R.id.myOrders:
                 Toast.makeText(MainActivity.this, "My Orders", Toast.LENGTH_SHORT).show();
