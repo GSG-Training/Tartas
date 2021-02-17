@@ -24,10 +24,69 @@
         android:orientation="horizontal"
         tools:listitem="@layout/item_sale_cake" />
     <TextView
+        android:id="@+id/text_today"
         android:textColor="@color/black"
         android:padding="8dp"
         android:layout_below="@+id/sale_cake_recycler"
         android:text="@string/todaysspecial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_below="@+id/text_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="8dp"
+            android:id="@+id/TodayImageCake"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center_vertical|center"
+            android:src="@drawable/loadgif"
+            android:layout_alignParentLeft="true" />
+        <TextView
+            android:paddingTop="8dp"
+            android:id="@+id/TodayNameCake"
+            android:layout_toRightOf="@id/TodayImageCake"
+            android:textColor="@color/black"
+            tools:text="Cream Cake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RatingBar
+            android:paddingTop="8dp"
+            android:id="@+id/TodayRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TodayNameCake"
+            android:layout_toEndOf="@id/TodayImageCake"
+            android:layout_toRightOf="@id/TodayImageCake"
+            android:isIndicator="true"
+            android:numStars="6"
+            android:rating="4.5"
+            android:stepSize="0.1"
+            android:clickable="true" />
+        <TextView
+            android:id="@+id/TodayPriceCake"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/TodayRatingBar"
+            android:padding="8dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/red"
+            tools:text="$30.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/TodayDescriptionCake"
+            android:ellipsize="end"
+            android:lines="2"
+            android:padding="8dp"
+            tools:text="A cookies and cream sponge hand piped with cookies and cream"
+            android:layout_toEndOf="@id/TodayImageCake"
+            android:layout_toRightOf="@id/TodayImageCake"
+            android:layout_below="@id/TodayRatingBar"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 </RelativeLayout>

@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         if (savedInstanceState != null){
-            remaining = savedInstanceState.getLong("remaining_delay",3000);
+            remaining = savedInstanceState.getLong("remaining_delay",2000);
         }
         currentTimeInMillis = System.currentTimeMillis();
         myHandler = new MyHandler(new WeakReference<>(this));
