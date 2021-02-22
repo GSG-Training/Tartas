@@ -30,4 +30,5 @@
     <string name="close">Drawer Close</string>
     <string name="View_More">View More</string>
     <string name="todaysspecial">Today\'s Special</string>
+    <string name="mostPopular">Most Popular</string>
 </resources>

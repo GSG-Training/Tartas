@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="180dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_gravity="center"
+        android:id="@+id/PopularSaleCakeImage"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/loadgif"
+        android:layout_alignParentLeft="true" />
+    <TextView
+        android:id="@+id/PopularNameCake"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        tools:text="Chocolate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RatingBar
+        android:layout_gravity="center"
+
+        android:id="@+id/PopularRatingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="6"
+        android:rating="2.5"
+        android:stepSize="0.1"
+        android:clickable="true" />
+    <TextView
+        android:id="@+id/PopularPriceCake"
+        android:layout_gravity="center"
+        tools:text="$35.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,8 +1,5 @@
 package com.example.tartas.view.MainActivity;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,25 +16,30 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.tartas.R;
+import com.example.tartas.model.MostPopularCake;
 import com.example.tartas.model.SaleCakeHome;
+import com.example.tartas.view.Adapters.PopularCakeAdapter;
 import com.example.tartas.view.Adapters.SaleCakeAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.Context;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
+
     private HomeFragment context;
     RecyclerView recyclerHome;
-    SaleCakeAdapter adapterHome;
+    SaleCakeAdapter saleCakeAdapter;
     List<SaleCakeHome> list;
     ProgressBar bar;
+    RecyclerView recyclerMostCakePopular;
+    List<MostPopularCake>listMostPopular;
+    PopularCakeAdapter popularCakeAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,11 +55,20 @@ public class HomeFragment extends Fragment {
         recyclerHome = v.findViewById(R.id.sale_cake_recycler);
         bar = v.findViewById(R.id.progress);
         list = new ArrayList<>();
-        adapterHome = new SaleCakeAdapter(getContext(),list);
+        saleCakeAdapter = new SaleCakeAdapter(getContext(),list);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerHome.setHasFixedSize(true);
         recyclerHome.setLayoutManager(manager);
+
+        recyclerMostCakePopular = v.findViewById(R.id.recycle_cake_Popular);
+        listMostPopular = new ArrayList<>();
+        popularCakeAdapter = new PopularCakeAdapter(getContext(),listMostPopular);
+        LinearLayoutManager manager1 = new LinearLayoutManager(getContext());
+        manager1.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerMostCakePopular.setLayoutManager(manager1);
+        recyclerMostCakePopular.setHasFixedSize(true);
+
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Cake");
         reference.addValueEventListener(new ValueEventListener() {
@@ -71,8 +82,8 @@ public class HomeFragment extends Fragment {
                     saleCakeHome.setRatingBar(Double.parseDouble(dataSnapshot.child("RatingBar").getValue()+""));
                     saleCakeHome.setSaleCakeImage(dataSnapshot.child("SaleCakeImage").getValue()+"");
                     list.add(saleCakeHome);
-                    recyclerHome.setAdapter(adapterHome);
-                    adapterHome.notifyDataSetChanged();
+                    recyclerHome.setAdapter(saleCakeAdapter);
+                    saleCakeAdapter.notifyDataSetChanged();
                 }
             }
 
@@ -94,6 +105,27 @@ public class HomeFragment extends Fragment {
                 Picasso.get()
                         .load(message)
                         .into(TodayImageCake);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        DatabaseReference reference3 = FirebaseDatabase.getInstance().getReference().child("MostCakePopular");
+        reference3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    MostPopularCake mostPopularCake = new MostPopularCake();
+                    mostPopularCake.setPopularSaleCakeImage(dataSnapshot.child("PopularCakeImage").getValue()+"");
+                    mostPopularCake.setPopularNameCake(dataSnapshot.child("PopularNameCake").getValue()+"");
+                    mostPopularCake.setPopularRatingBar(Double.parseDouble(dataSnapshot.child("PopularRatingBar").getValue()+""));
+                    mostPopularCake.setPopularPriceCake(dataSnapshot.child("PopularPriceCake").getValue()+"");
+                    listMostPopular.add(mostPopularCake);
+                    recyclerMostCakePopular.setAdapter(popularCakeAdapter);
+                    popularCakeAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
