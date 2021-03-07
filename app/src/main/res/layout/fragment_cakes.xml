@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.MainActivity.CakesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:id="@+id/text_offers"
+        android:textColor="@color/black"
+        android:layout_below="@+id/sale_cake_recycler"
+        android:text="@string/specialOffres"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cakes Fragment" />
+        android:layout_height="wrap_content"
+       />
+    <RelativeLayout
+        android:layout_margin="8dp"
+        android:id="@+id/RelativeSpecialOffers"
+        android:layout_below="@+id/text_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="16dp"
+            android:id="@+id/OffersImageCake"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center_vertical|center"
+            android:src="@drawable/loadgif"
+            android:layout_alignParentLeft="true" />
+        <TextView
+            android:paddingTop="8dp"
+            android:id="@+id/OffersNameCake"
+            android:layout_toRightOf="@id/OffersImageCake"
+            android:textColor="@color/black"
+            tools:text="Caramel PopCorn Crunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RatingBar
+            android:paddingTop="8dp"
+            android:id="@+id/OffersRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/OffersNameCake"
+            android:layout_toEndOf="@id/OffersImageCake"
+            android:layout_toRightOf="@id/OffersImageCake"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="0.1"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/OffersDescriptionCake"
+            android:ellipsize="end"
+            android:lines="1"
+            android:padding="8dp"
+            tools:text="Indulgent salted"
+            android:layout_toEndOf="@id/OffersImageCake"
+            android:layout_toRightOf="@id/OffersImageCake"
+            android:layout_below="@id/OffersRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/OffersPriceCake"
+            android:layout_toRightOf="@id/OffersImageCake"
+            android:layout_below="@+id/OffersDescriptionCake"
+            android:padding="8dp"
+            android:textColor="@color/red"
+            tools:text="$70.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@id/OffersPriceCake"
+            android:id="@+id/OffersOldPriceCake"
+            android:layout_below="@+id/OffersDescriptionCake"
+            android:padding="8dp"
+            android:textColor="@color/LightResidential"
+            tools:text="$80.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <View
+            android:layout_alignRight="@id/OffersOldPriceCake"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/OffersPriceCake"
+            android:layout_below="@+id/OffersDescriptionCake"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/LightResidential"
+            />
+
+    </RelativeLayout>
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

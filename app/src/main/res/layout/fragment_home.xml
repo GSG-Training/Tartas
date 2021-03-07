@@ -15,8 +15,8 @@
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
 
@@ -29,7 +29,7 @@
         tools:listitem="@layout/item_sale_cake" />
     <TextView
         android:paddingStart="8dp"
-        android:id="@+id/text_today"
+        android:id="@+id/text_offers"
         android:textColor="@color/black"
         android:layout_below="@+id/sale_cake_recycler"
         android:text="@string/todaysspecial"
@@ -38,13 +38,13 @@
         android:paddingLeft="8dp" />
     <RelativeLayout
         android:id="@+id/RelativeTodaysSpecial"
-        android:layout_below="@+id/text_today"
+        android:layout_below="@+id/text_offers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_marginTop="8dp"
-            android:id="@+id/TodayImageCake"
+            android:id="@+id/OffersImageCake"
             android:layout_width="150dp"
             android:layout_height="110dp"
             android:layout_gravity="center_vertical|center"
@@ -52,30 +52,30 @@
             android:layout_alignParentLeft="true" />
         <TextView
             android:paddingTop="8dp"
-            android:id="@+id/TodayNameCake"
-            android:layout_toRightOf="@id/TodayImageCake"
+            android:id="@+id/OffersNameCake"
+            android:layout_toRightOf="@id/OffersImageCake"
             android:textColor="@color/black"
             tools:text="Cream Cake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <RatingBar
             android:paddingTop="8dp"
-            android:id="@+id/TodayRatingBar"
+            android:id="@+id/OffersRatingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TodayNameCake"
-            android:layout_toEndOf="@id/TodayImageCake"
-            android:layout_toRightOf="@id/TodayImageCake"
+            android:layout_below="@id/OffersNameCake"
+            android:layout_toEndOf="@id/OffersImageCake"
+            android:layout_toRightOf="@id/OffersImageCake"
             android:isIndicator="true"
             android:numStars="6"
             android:rating="4.5"
             android:stepSize="0.1"
             android:clickable="true" />
         <TextView
-            android:id="@+id/TodayPriceCake"
+            android:id="@+id/OffersOldPriceCake"
             android:layout_marginRight="16dp"
-            android:layout_below="@+id/TodayRatingBar"
+            android:layout_below="@+id/OffersRatingBar"
             android:padding="8dp"
             android:layout_alignParentRight="true"
             android:textColor="@color/red"
@@ -84,14 +84,14 @@
             android:layout_height="wrap_content"
             />
         <TextView
-            android:id="@+id/TodayDescriptionCake"
+            android:id="@+id/OffersDescriptionCake"
             android:ellipsize="end"
             android:lines="2"
             android:padding="8dp"
             tools:text="A cookies and cream sponge hand piped with cookies and cream"
-            android:layout_toEndOf="@id/TodayImageCake"
-            android:layout_toRightOf="@id/TodayImageCake"
-            android:layout_below="@id/TodayRatingBar"
+            android:layout_toEndOf="@id/OffersImageCake"
+            android:layout_toRightOf="@id/OffersImageCake"
+            android:layout_below="@id/OffersRatingBar"
             android:layout_width="160dp"
             android:layout_height="wrap_content"/>
     </RelativeLayout>

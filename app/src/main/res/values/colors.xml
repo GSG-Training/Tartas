@@ -11,4 +11,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_tabs">#ffff</color>
     <color name="Residential">#94000000</color>
+    <color name="LightResidential">#48000000</color>
 </resources>

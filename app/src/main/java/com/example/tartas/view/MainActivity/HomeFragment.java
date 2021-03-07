@@ -1,12 +1,6 @@
 package com.example.tartas.view.MainActivity;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +8,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tartas.R;
 import com.example.tartas.model.MostPopularCake;
@@ -46,11 +45,11 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
         context = this;
-        TextView TodayNameCake = v.findViewById(R.id.TodayNameCake);
-        TextView TodayPriceCake = v.findViewById(R.id.TodayPriceCake);
-        RatingBar TodayRatingBar = v.findViewById(R.id.TodayRatingBar);
-        TextView TodayDescriptionCake = v.findViewById(R.id.TodayDescriptionCake);
-        ImageView TodayImageCake = v.findViewById(R.id.TodayImageCake);
+        TextView TodayNameCake = v.findViewById(R.id.OffersNameCake);
+        TextView TodayPriceCake = v.findViewById(R.id.OffersOldPriceCake);
+        RatingBar TodayRatingBar = v.findViewById(R.id.OffersRatingBar);
+        TextView TodayDescriptionCake = v.findViewById(R.id.OffersDescriptionCake);
+        ImageView TodayImageCake = v.findViewById(R.id.OffersImageCake);
 
         recyclerHome = v.findViewById(R.id.sale_cake_recycler);
         bar = v.findViewById(R.id.progress);
@@ -84,6 +83,7 @@ public class HomeFragment extends Fragment {
                     list.add(saleCakeHome);
                     recyclerHome.setAdapter(saleCakeAdapter);
                     saleCakeAdapter.notifyDataSetChanged();
+                    bar.setVisibility(View.GONE);
                 }
             }
 
