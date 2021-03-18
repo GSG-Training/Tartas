@@ -44,7 +44,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_marginTop="8dp"
-            android:id="@+id/OffersImageCake"
+            android:id="@+id/SpecialImageCake"
             android:layout_width="150dp"
             android:layout_height="110dp"
             android:layout_gravity="center_vertical|center"
@@ -52,30 +52,30 @@
             android:layout_alignParentLeft="true" />
         <TextView
             android:paddingTop="8dp"
-            android:id="@+id/OffersNameCake"
-            android:layout_toRightOf="@id/OffersImageCake"
+            android:id="@+id/SpecialNameCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
             android:textColor="@color/black"
             tools:text="Cream Cake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <RatingBar
             android:paddingTop="8dp"
-            android:id="@+id/OffersRatingBar"
+            android:id="@+id/SpecialRatingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/OffersNameCake"
-            android:layout_toEndOf="@id/OffersImageCake"
-            android:layout_toRightOf="@id/OffersImageCake"
+            android:layout_below="@id/SpecialNameCake"
+            android:layout_toEndOf="@id/SpecialImageCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
             android:isIndicator="true"
             android:numStars="6"
             android:rating="4.5"
             android:stepSize="0.1"
             android:clickable="true" />
         <TextView
-            android:id="@+id/OffersOldPriceCake"
+            android:id="@+id/SpecialOldPriceCake"
             android:layout_marginRight="16dp"
-            android:layout_below="@+id/OffersRatingBar"
+            android:layout_below="@+id/SpecialRatingBar"
             android:padding="8dp"
             android:layout_alignParentRight="true"
             android:textColor="@color/red"
@@ -84,14 +84,14 @@
             android:layout_height="wrap_content"
             />
         <TextView
-            android:id="@+id/OffersDescriptionCake"
+            android:id="@+id/SpecialDescriptionCake"
             android:ellipsize="end"
             android:lines="2"
             android:padding="8dp"
             tools:text="A cookies and cream sponge hand piped with cookies and cream"
-            android:layout_toEndOf="@id/OffersImageCake"
-            android:layout_toRightOf="@id/OffersImageCake"
-            android:layout_below="@id/OffersRatingBar"
+            android:layout_toEndOf="@id/SpecialImageCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
+            android:layout_below="@id/SpecialRatingBar"
             android:layout_width="160dp"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
@@ -105,10 +105,13 @@
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        app:tabIndicatorColor="#FF018786"
+        app:tabIndicatorHeight="3dp"
+        android:scrollIndicators="bottom"
         android:layout_below="@+id/text_mostPopular"
         android:id="@+id/recycle_cake_Popular"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="188dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
         tools:listitem="@layout/item_most_popular" />

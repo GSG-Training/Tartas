@@ -83,8 +83,8 @@
         android:background="@color/white_tabs"
         app:tabGravity="fill"
         app:tabIconTint="@color/tab_icon_tint"
-        app:tabIndicatorColor="#ffff"
-        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorColor="#FF018786"
+        app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="#F00"
         app:tabTextColor="#93A6B7">

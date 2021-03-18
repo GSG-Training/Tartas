@@ -4,6 +4,9 @@
     android:layout_height="180dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@drawable/readus"
+    android:padding="5dp"
+    android:layout_margin="5dp"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView

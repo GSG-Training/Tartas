@@ -45,11 +45,11 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
         context = this;
-        TextView TodayNameCake = v.findViewById(R.id.OffersNameCake);
-        TextView TodayPriceCake = v.findViewById(R.id.OffersOldPriceCake);
-        RatingBar TodayRatingBar = v.findViewById(R.id.OffersRatingBar);
-        TextView TodayDescriptionCake = v.findViewById(R.id.OffersDescriptionCake);
-        ImageView TodayImageCake = v.findViewById(R.id.OffersImageCake);
+        TextView TodayNameCake = v.findViewById(R.id.SpecialNameCake);
+        TextView TodayPriceCake = v.findViewById(R.id.SpecialOldPriceCake);
+        RatingBar TodayRatingBar = v.findViewById(R.id.SpecialRatingBar);
+        TextView TodayDescriptionCake = v.findViewById(R.id.SpecialDescriptionCake);
+        ImageView TodayImageCake = v.findViewById(R.id.SpecialImageCake);
 
         recyclerHome = v.findViewById(R.id.sale_cake_recycler);
         bar = v.findViewById(R.id.progress);

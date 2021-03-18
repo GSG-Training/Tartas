@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.MainActivity.CakesFragment">
 
@@ -25,7 +26,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_marginTop="16dp"
-            android:id="@+id/OffersImageCake"
+            android:id="@+id/SpecialImageCake"
             android:layout_width="150dp"
             android:layout_height="110dp"
             android:layout_gravity="center_vertical|center"
@@ -33,21 +34,21 @@
             android:layout_alignParentLeft="true" />
         <TextView
             android:paddingTop="8dp"
-            android:id="@+id/OffersNameCake"
-            android:layout_toRightOf="@id/OffersImageCake"
+            android:id="@+id/SpecialNameCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
             android:textColor="@color/black"
             tools:text="Caramel PopCorn Crunch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <RatingBar
             android:paddingTop="8dp"
-            android:id="@+id/OffersRatingBar"
+            android:id="@+id/SpecialRatingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/OffersNameCake"
-            android:layout_toEndOf="@id/OffersImageCake"
-            android:layout_toRightOf="@id/OffersImageCake"
+            android:layout_below="@id/SpecialNameCake"
+            android:layout_toEndOf="@id/SpecialImageCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
             android:isIndicator="true"
             android:numStars="5"
             android:rating="5"
@@ -55,20 +56,20 @@
             android:clickable="true" />
 
         <TextView
-            android:id="@+id/OffersDescriptionCake"
+            android:id="@+id/SpecialDescriptionCake"
             android:ellipsize="end"
             android:lines="1"
             android:padding="8dp"
             tools:text="Indulgent salted"
-            android:layout_toEndOf="@id/OffersImageCake"
-            android:layout_toRightOf="@id/OffersImageCake"
-            android:layout_below="@id/OffersRatingBar"
+            android:layout_toEndOf="@id/SpecialImageCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
+            android:layout_below="@id/SpecialRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/OffersPriceCake"
-            android:layout_toRightOf="@id/OffersImageCake"
-            android:layout_below="@+id/OffersDescriptionCake"
+            android:layout_toRightOf="@id/SpecialImageCake"
+            android:layout_below="@+id/SpecialDescriptionCake"
             android:padding="8dp"
             android:textColor="@color/red"
             tools:text="$70.00"
@@ -78,8 +79,8 @@
         <TextView
             android:layout_marginStart="20dp"
             android:layout_toRightOf="@id/OffersPriceCake"
-            android:id="@+id/OffersOldPriceCake"
-            android:layout_below="@+id/OffersDescriptionCake"
+            android:id="@+id/SpecialOldPriceCake"
+            android:layout_below="@+id/SpecialDescriptionCake"
             android:padding="8dp"
             android:textColor="@color/LightResidential"
             tools:text="$80.00"
@@ -87,12 +88,12 @@
             android:layout_height="wrap_content"
             />
         <View
-            android:layout_alignRight="@id/OffersOldPriceCake"
+            android:layout_alignRight="@id/SpecialOldPriceCake"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:padding="8dp"
             android:layout_toRightOf="@id/OffersPriceCake"
-            android:layout_below="@+id/OffersDescriptionCake"
+            android:layout_below="@+id/SpecialDescriptionCake"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:layout_marginLeft="16dp"
@@ -105,4 +106,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:tabIndicatorColor="#FF018786"
+        app:tabIndicatorHeight="3dp"
+        android:scrollIndicators="left"
+        android:padding="16dp"
+        android:layout_below="@+id/RelativeSpecialOffers"
+        android:id="@+id/recycle_cakes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_recycle_cakes" />
 </RelativeLayout>
